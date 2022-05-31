@@ -1,0 +1,14 @@
+{
+  "name": "practicos",
+  "version": "1.0.0",
+  "description": "practicos de la optativa \"Taller de desarrollo web\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeronimo Vallelunga",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.6.0"
+  }
+}

@@ -1,1 +1,3 @@
-# taller-de-desarrollo-web
+nvm use
+npm install 
+npm start
