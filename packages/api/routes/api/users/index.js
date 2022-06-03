@@ -1,15 +1,9 @@
 var router = require('express').Router();
 
-var UserService = require('#services/user/index');
+var UserController = require('#controllers/user/index');
 
-router.post('/', async function(req, res, next) {
-  try {
-    const resonse = UserService.create({ name: 'inserting ' + Date.now() });
-    res.json(resonse);
-  } catch (err) {
-    next(err);
-  }  
-});
+router.post('/', UserController.create);
+
 router.get('/', async function(req, res, next) {
   try {
     res.json(await UserService.find());

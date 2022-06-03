@@ -1,22 +1,3 @@
-// Proyecto: tracking colleccion de cartas magic 
-// usuarios, que tienen mazos, y colecciones de cartas.
-// El mazo consisten en un conjunto de 60 cartas, maximo 4 cartas de la misma copia
-
-// El usuario puede agregar cartas a sus colecciones, las cartas pueden estar repetidas
-// El usuario puede eliminar cartas a sus colecciones, si tiene mas de una elimina una copia
-// El usuario pueden crear mazos
-// El usuario pueden listar mazos
-// El usuario pueden modificar mazos
-// El usuario pueden eliminar mazos
-// El usuario puede listar los mazos de todos los usuarios
-// El usuario puede listar los mazos de otro usuario
-// El usuario puede ver el mazo de otro usuario
-// El usuario puede clonar el mazo de otro usuario
-// El usuario puede ver que cartas de su mazo no estan en su coleccion
-// El usuario puede ver que cartas tiene otro usuario, que le faltan en su mazo
-// El usuario peude ver que cartas tiene en su coleccion, que le hacen falta a otro mazo de otro usuario
-
-
 const { exit } = require('process');
 
 const MongoClient = require('mongodb').MongoClient

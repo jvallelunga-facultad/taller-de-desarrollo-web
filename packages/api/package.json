@@ -9,10 +9,11 @@
     "development": "nodemon ./bin/www"
   },
   "imports": {
-    "#models/*": "./models/*.js",
+    "#config/*": "./config/*.js",
     "#api/*": "./routes/api/*.js",
+    "#controllers/*": "./controllers/*.js",
     "#services/*": "./services/*.js",
-    "#config/*": "./config/*.js"
+    "#models/*": "./models/*.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
