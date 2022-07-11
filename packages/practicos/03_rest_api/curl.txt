@@ -1,0 +1,58 @@
+USERS
+
+USERS > create
+curl --location --request POST 'localhost:3001/api/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Jero"
+}'
+
+USERS > read
+curl --location --request GET 'localhost:3001/api/users/62c903eebe42201908308837'
+
+USERS > update
+curl --location --request PUT 'localhost:3001/api/users/62c903eebe42201908308837' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Jeronimo"
+}'
+
+USERS > delete
+curl --location --request DELETE 'localhost:3001/api/users/62c903eebe42201908308837'
+
+USERS > find
+curl --location --request GET 'localhost:3001/api/users'
+
+
+CARDS 
+
+CARDS > read
+curl --location --request GET 'localhost:3001/api/cards/62c656bd44768e9593fa607d'
+
+CARDS > find
+curl --location --request GET 'localhost:3001/api/cards?limit=100&skip=100&filter=%7B%20%22cmc%22%3A%20%7B%20%22%24lte%22%3A%202%20%7D%20%7D'
+
+
+USER CARDS 
+
+USER CARDS > create
+curl --location --request POST 'localhost:3001/api/users/62c903eebe42201908308837/cards' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "card": "62c656bd44768e9593fa607d",
+    "copies": 2
+}'
+
+USER CARDS > read
+curl --location --request GET 'localhost:3001/api/users/62c903eebe42201908308837/cards/62c911b798ffef62f74d9f0b'
+
+USER CARDS > update
+curl --location --request PUT 'localhost:3001/api/users/62c903eebe42201908308837/cards/62c911b798ffef62f74d9f0b' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "card": "62c656bd44768e9593fa607d",
+    "copies": 3
+}'
+
+USER CARDS > delete
+curl --location --request DELETE 'localhost:3001/api/users/62c903eebe42201908308837/cards/62c911b798ffef62f74d9f0b'

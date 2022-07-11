@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var CardController = require('#controllers/card/index');
+var DeckController = require('#controllers/deck/index');
 
 router.get('/', async function(req, res, next) {
   try {
-    res.json(await CardController.query(req));
+    res.json(await DeckController.query(req));
   } catch (err) {
     next(err);
   } 
@@ -13,7 +13,7 @@ router.get('/', async function(req, res, next) {
 
 router.get('/:id', async function(req, res, next) {
   try {
-    res.json(await CardController.read(req));
+    res.json(await DeckController.read(req));
   } catch (err) {
     next(err);
   } 

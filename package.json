@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "start": "(npx lerna run --scope webapp development) & (docker-compose up)",
+    "start:api": "docker-compose up",
+    "start:webapp": "npx lerna run --scope webapp development",
     "postinstall": "lerna bootstrap"
   },
   "devDependencies": {

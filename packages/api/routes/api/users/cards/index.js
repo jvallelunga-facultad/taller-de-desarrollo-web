@@ -1,14 +1,12 @@
 var router = require('express').Router({ mergeParams: true });
 
-var UserController = require('#controllers/user/index');
-
-router.use('/:owner/decks', require('./decks'));
-router.use('/:owner/cards', require('./cards'));
+var UserCardController = require('#controllers/user_card/index');
 
 // QUERY
 router.get('/', async function(req, res, next) {
   try {
-    res.json(await UserController.query(req));
+    console.log('api > users > cards ', JSON.stringify({ params: req.params, query: req.query }));
+    res.json(await UserCardController.query(req));
   } catch (err) {
     next(err);
   }  
@@ -17,7 +15,7 @@ router.get('/', async function(req, res, next) {
 // CREATE
 router.post('/', async function(req, res, next) {
   try {
-    res.json(await UserController.create(req));
+    res.json(await UserCardController.create(req));
   } catch (err) {
     next(err);
   }  
@@ -26,7 +24,7 @@ router.post('/', async function(req, res, next) {
 // READ
 router.get('/:id', async function(req, res, next) {
   try {
-    res.json(await UserController.read(req));
+    res.json(await UserCardController.read(req));
   } catch (err) {
     next(err);
   }  
@@ -35,7 +33,7 @@ router.get('/:id', async function(req, res, next) {
 // UPDATE
 router.put('/:id', async function(req, res, next) {
   try {
-    res.json(await UserController.update(req));
+    res.json(await UserCardController.update(req));
   } catch (err) {
     next(err);
   }  
@@ -44,7 +42,7 @@ router.put('/:id', async function(req, res, next) {
 // DELETE
 router.delete('/:id', async function(req, res, next) {
   try {
-    res.json(await UserController.delete(req));
+    res.json(await UserCardController.delete(req));
   } catch (err) {
     next(err);
   }  

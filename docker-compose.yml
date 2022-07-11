@@ -19,6 +19,7 @@ services:
       - EXPRESS_SKIP_BOWER_INSTALL=0
     volumes:
       - './packages/api:/app'
+      - './packages/practicos:/practicos'
     depends_on:
       - mongodb
     command: 'npm run development'
